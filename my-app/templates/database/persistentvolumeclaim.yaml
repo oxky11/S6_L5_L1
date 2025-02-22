@@ -9,7 +9,3 @@ spec:
   resources:
     requests:
       storage: {{ .Values.database.pvc.storage }}
-  volumes:
-  - name: task-pv-storage
-    persistentVolumeClaim:
-      claimName: task-pv-claim
