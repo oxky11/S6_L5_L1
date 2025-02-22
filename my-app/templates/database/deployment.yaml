@@ -19,3 +19,7 @@ spec:
         image: {{ .Values.database.image.repository }}:{{ .Values.database.image.tag }}
         ports:
         - containerPort: {{ .Values.database.service.port }}
+      volumes:
+      - name: {{ .Values.database.name }}-storage
+        persistentVolumeClaim:
+          claimName: {{ .Values.database.name }}-claim

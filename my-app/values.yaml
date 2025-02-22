@@ -21,6 +21,7 @@ backend:
     pullPolicy: IfNotPresent
     tag: latest
 database:
+  name: database
   replicas: 1
   service:
     type: ClusterIP
@@ -29,3 +30,6 @@ database:
     repository: mysql
     pullPolicy: IfNotPresent
     tag: latest
+  pvc:
+    accessMode: ReadWriteOnce
+    storage: 2Gi
